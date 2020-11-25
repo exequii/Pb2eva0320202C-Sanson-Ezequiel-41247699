@@ -15,6 +15,7 @@ public class Autopista{
 	
 	public Boolean registrarTelepase (Integer numeroTelepase, Vehiculo vehiculo) {
 		if((!telepase.containsKey(numeroTelepase))&& (!telepase.containsValue(vehiculo))) {
+			telepase.put(numeroTelepase, vehiculo);
 			return true;
 		}
 		return false;
@@ -33,6 +34,13 @@ public class Autopista{
 		}
 		
 		return ingreso;
+		
+		/*
+		if(telepase.containsKey(numeroTelepase))
+            return vehiculosEnCirculacion.add(telepase.get(numeroTelepase));
+
+        throw new VehiculoNotFoundException("Vehiculo no encontrado");
+        */
 	}
 	
 	public Boolean salirAutpista (Vehiculo vehiculo) throws VehiculoNotFoundException{

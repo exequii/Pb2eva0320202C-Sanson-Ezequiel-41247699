@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb220202c.eva03;
 
-public class Vehiculo implements Imultable{
+public class Vehiculo implements Imultable, Comparable<Vehiculo>{
 
 	//Se debe crear contructeres getters y Setters y loos que crean convenientes
 	private String patente;
@@ -82,6 +82,12 @@ public class Vehiculo implements Imultable{
 
         return false;
     }
+
+	@Override
+	public int compareTo(Vehiculo o) {
+		// TODO Auto-generated method stub
+		return this.patente.compareTo(o.patente);
+	}
 	
 
 }
